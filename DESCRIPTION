@@ -1,12 +1,11 @@
-Package: pol345.student
-Title: Handout and Precept Materials for POL 345
+Package: RTutorial
+Title: Handout and materials for the R Tutorial.
 Version: 0.2.04
 Authors@R: c(
   person("Will", "Lowe", email = "wlowe@princeton.edu", role = c("aut", "cre")), 
-  person("Marc", "Ratkovic", email = "ratkovic@princeton.edu", role = "ctb"))
+  person("Marc", "Ratkovic", email = "marc.ratkovic@uni-mannheim.de", role = "ctb"))
 Description: This package allows students to unpack and view the 
-             handouts and answer the questions before each precept in
-             Princeton's Politics 345 class.
+             handouts and answer the questions to learn R.
 Depends: R (>= 3.3)
 Imports: cli
 RoxygenNote: 7.1.1
@@ -17,5 +16,5 @@ Suggests: testthat,
 License: GPL-3 + file LICENSE
 Encoding: UTF-8
 LazyData: true
-URL: https://github.com/conjugateprior/pol345.student
-BugReports: https://github.com/conjugateprior/pol345.student/issues
+URL: https://github.com/ratkovic/pRTutorial
+BugReports: https://github.com/ratkovic/RTutorial/issues
