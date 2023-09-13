@@ -1,4 +1,4 @@
-#' The pol345.student Package
+#' The RTutorial Package
 #'
 #' This package contains handouts for
 #' Marc Ratkovic and Will Lowe's version of POL 345.
@@ -33,22 +33,22 @@
 #' unpacking it into your local file system, use \code{\link{preview_handout}}.
 #'
 #' @docType package
-#' @name pol345.student
+#' @name RTutorial
 NULL
 
 get_handout_by_number <- function(num){
   system.file(file.path("extdata", paste0("handout", num, ".zip")),
-              package = "pol345.student")
+              package = "RTutorial")
 }
 
 get_precept_by_number <- function(num){
   system.file(file.path("extdata", paste0("precept", num, ".zip")),
-              package = "pol345.student")
+              package = "RTutorial")
 }
 
 get_problemset_by_number <- function(num){
   system.file(file.path("extdata", paste0("problemset", num, ".zip")),
-              package = "pol345.student")
+              package = "RTutorial")
 }
 
 #' Unpack Handout Materials by Number
@@ -276,7 +276,7 @@ preview_handout <- function(pnum){
 #'
 get_precept_answers <- function(pnum){
   pdf <- system.file(file.path("extdata", paste0("precept", pnum, "-inst.pdf")),
-              package = "pol345.student")
+              package = "RTutorial")
   if (pdf == "")
     stop("Cannot locate the precept answers for precept ", pnum)
   utils::browseURL(pdf)
@@ -320,15 +320,15 @@ rename_for_upload <- function(fname){
 #' Update the package
 #'
 #' This function updates the package by running
-#' \code{devtools::install_github("ratkovic/pol345.student")}.
+#' \code{devtools::install_github("ratkovic/RTutorial")}.
 #'
 #' @return Nothing
 #' @export
 #'
 update_package <- function(){
-  #devtools::install_github("conjugateprior/pol345.student")
-  devtools::install_github("ratkovic/pol345.student")
-  
+  #devtools::install_github("conjugateprior/RTutorial")
+  devtools::install_github("ratkovic/RTutorial")
+
 }
 
 
@@ -356,7 +356,7 @@ get_problemset <- function(pnum, newname = NULL){
   if (f == "")
     stop("There is no problem set numbered '", pnum, "'")
   pname <- paste0("problemset", pnum)
-  
+
   # f is the zip file
   temp <- ".unpacking_psets"
   if (!dir.exists(temp)) {
@@ -391,8 +391,8 @@ get_problemset <- function(pnum, newname = NULL){
   }
   if (dir.exists(temp))
     unlink(temp, recursive = TRUE) # bye
-  
-  
+
+
   cli::cat_line("Hint: To start working on this problem set", col = "darkgray")
   cli::cat_line("")
   cli::cat_bullet('setwd("', dname, '")',
@@ -400,7 +400,7 @@ get_problemset <- function(pnum, newname = NULL){
   cli::cat_bullet('file.edit("', paste0(dname, '.Rmd'), '")',
                   bullet_col = "gray", col = "darkgray", bullet = "pointer")
   cli::cat_line("")
-  
+
   cli::cat_line('To view the questions in compiled form, click on ',
                 paste0(dname, '.pdf'), " in the Files tab",
                 col = "darkgray")
