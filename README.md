@@ -8,7 +8,7 @@ The first piece of software we will install is R, which we will use for our stat
 
 ### Mac Users
 
-1. Download and install [R for Mac](https://cran.rstudio.com/bin/macosx/base/R-release.pkg)
+1. Download and install [R for Mac](https://cran.r-project.org/bin/macosx/)
 
 2. Open your Terminal Application (you’ll find it in the Applications > Utilities folder) and type
 
