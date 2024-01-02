@@ -350,12 +350,21 @@ update_package <- function(){
 #' @param pnum Number of problem set
 #' @param newname Your preferred name for the unpacked problem set materials.
 #'                (Default: NULL)
+#' @param final Whether the final is to
 #' @export
-get_problemset <- function(pnum, newname = NULL){
+get_problemset <- function(pnum, newname = NULL, final = FALSE){
   f <- get_problemset_by_number(pnum)
+
+  if(final == TRUE)
+    f <-
+    system.file(file.path("extdata", paste0("final", pnum, ".zip")),
+                package = "RTutorial")
+
   if (f == "")
     stop("There is no problem set numbered '", pnum, "'")
   pname <- paste0("problemset", pnum)
+  if(final == TRUE)
+    pname <- paste0("final", pnum)
 
   # f is the zip file
   temp <- ".unpacking_psets"
